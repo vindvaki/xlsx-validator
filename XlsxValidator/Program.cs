@@ -17,7 +17,9 @@ namespace XlsxValidator
 				Console.WriteLine("No document given");
 				return;
 			}
-			using (SpreadsheetDocument doc = SpreadsheetDocument.Open(args[0], false))
+			var path = args[0];
+
+			using (SpreadsheetDocument doc = SpreadsheetDocument.Open(path, false))
 			{
 				var validator = new OpenXmlValidator();
 				var errors = validator.Validate(doc);
@@ -32,9 +34,10 @@ namespace XlsxValidator
 				Console.WriteLine();
 				foreach (var error in errors)
 				{
-					Console.WriteLine("Error description: {0}", error.Description);
-					Console.WriteLine("Content type of part with error: {0}", error.Part.ContentType);
-					Console.WriteLine("Location of error: {0}", error.Path.XPath);
+					Console.WriteLine("File: {0}", path);
+					Console.WriteLine("Error: {0}", error.Description);
+					Console.WriteLine("ContentType: {0}", error.Part.ContentType);
+					Console.WriteLine("XPath: {0}", error.Path.XPath);
 					Console.WriteLine();
 				}
 			}
