@@ -7,7 +7,6 @@ services:
 
 before_install:
 - docker build -t axlsx examples/axlsx-ci
-- docker run axlsx "./validate-xlsx-files.sh"
 
 script:
-- ./validate-xlsx-files.sh
+- docker run axlsx "./validate-xlsx-files.sh"
