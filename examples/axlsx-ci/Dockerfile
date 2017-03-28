@@ -9,7 +9,5 @@ RUN cd /app && git clone https://github.com/randym/axlsx.git
 WORKDIR /app/axlsx
 RUN bundle install
 
-# generate example files
-RUN bundle exec ruby examples/example.rb
-
-# for f in *.xslx; do xlsx-validator $f; end
+# add script
+ADD validate-xlsx-files.sh .
