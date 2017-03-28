@@ -1,0 +1,13 @@
+sudo: required
+
+language: ruby
+
+services:
+- docker
+
+before_install:
+- docker build -t axlsx examples/axlsx-ci
+- docker run axlsx "./validate-xlsx-files.sh"
+
+script:
+- ./validate-xlsx-files.sh
