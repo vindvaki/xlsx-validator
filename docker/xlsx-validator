@@ -1,0 +1,3 @@
+#!/bin/sh
+
+mono /app/xlsx-validator/XlsxValidator/bin/Release/XlsxValidator.exe $@
