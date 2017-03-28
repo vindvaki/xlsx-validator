@@ -1,5 +1,6 @@
 .git/
 .dockerignore
+Dockerfile
 docker/
 XlsValidator/obj/
 XlsValidator/bin/
