@@ -4,7 +4,7 @@ services:
 - docker
 
 before_install:
-- docker build --build-arg BRANCH=release-3.0.0 . -t axlsx
+- docker build --build-arg BRANCH=release-3.0.0 examples/axlsx-ci -t axlsx
 
 script:
 - docker run axlsx "./validate-xlsx-files.sh"
