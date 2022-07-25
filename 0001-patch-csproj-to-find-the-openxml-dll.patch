@@ -1,0 +1,52 @@
+From 8c764df6ad27d08b207029879f63d59838c6b53d Mon Sep 17 00:00:00 2001
+From: Jappie Klooster <jappieklooster@hotmail.com>
+Date: Mon, 25 Jul 2022 13:36:18 +0200
+Subject: [PATCH] patch csproj to find the openxml dll
+
+---
+ XlsxValidator.csproj | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/XlsxValidator.csproj b/XlsxValidator.csproj
+index 06bba76..272b4b5 100644
+--- a/XlsxValidator.csproj
++++ b/XlsxValidator.csproj
+@@ -53,7 +53,7 @@
+     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
+       <ItemGroup>
+         <Reference Include="DocumentFormat.OpenXml">
+-          <HintPath>..\packages\DocumentFormat.OpenXml\lib\net35\DocumentFormat.OpenXml.dll</HintPath>
++          <HintPath>lib\dotnet\DocumentFormat.OpenXml\net35\DocumentFormat.OpenXml.dll</HintPath>
+           <Private>True</Private>
+           <Paket>True</Paket>
+         </Reference>
+@@ -62,7 +62,7 @@
+     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3')">
+       <ItemGroup>
+         <Reference Include="DocumentFormat.OpenXml">
+-          <HintPath>..\packages\DocumentFormat.OpenXml\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
++          <HintPath>lib\dotnet\DocumentFormat.OpenXml\net40\DocumentFormat.OpenXml.dll</HintPath>
+           <Private>True</Private>
+           <Paket>True</Paket>
+         </Reference>
+@@ -71,7 +71,7 @@
+     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+       <ItemGroup>
+         <Reference Include="DocumentFormat.OpenXml">
+-          <HintPath>..\packages\DocumentFormat.OpenXml\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
++          <HintPath>lib\dotnet\DocumentFormat.OpenXml\net46\DocumentFormat.OpenXml.dll</HintPath>
+           <Private>True</Private>
+           <Paket>True</Paket>
+         </Reference>
+@@ -80,7 +80,7 @@
+     <When Condition="($(TargetFrameworkIdentifier) == '.NETStandard' And ($(TargetFrameworkVersion) == 'v1.3' Or $(TargetFrameworkVersion) == 'v1.4' Or $(TargetFrameworkVersion) == 'v1.5' Or $(TargetFrameworkVersion) == 'v1.6')) Or ($(TargetFrameworkIdentifier) == '.NETCoreApp' And $(TargetFrameworkVersion) == 'v1.0')">
+       <ItemGroup>
+         <Reference Include="DocumentFormat.OpenXml">
+-          <HintPath>..\packages\DocumentFormat.OpenXml\lib\netstandard1.3\DocumentFormat.OpenXml.dll</HintPath>
++          <HintPath>lib\dotnet\DocumentFormat.OpenXml\netstandard1.3\DocumentFormat.OpenXml.dll</HintPath>
+           <Private>True</Private>
+           <Paket>True</Paket>
+         </Reference>
+-- 
+2.33.3
+

@@ -23,6 +23,8 @@ buildDotnetPackage rec {
   src = ./XlsxValidator;
   projectFile = ["./XlsxValidator.csproj"];
 
+  patches = [ ./0001-patch-csproj-to-find-the-openxml-dll.patch];
+
 
   # we patch in the openxml ref by hand,
   # nix doesn't appear to do depencencies yet
