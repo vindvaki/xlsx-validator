@@ -4,10 +4,10 @@ get's openxml
 { fetchNuGet,
 }:
 
-# https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/dotnet/build-dotnet-package/default.nix
+# https://www.nuget.org/packages/DocumentFormat.OpenXml
 fetchNuGet {
     pname = "DocumentFormat.OpenXml";
-    version = "2.8.1";
-    sha256 = "08r7farkimmr0r7vjkdmc6a6vdz33smfc2si8zs5kf85c7l9nc67";
+    version = "2.17.1";
+    sha256 = "05fcyh53hz6m45pgq49lvgaz9a150hkgl66xx6i4inaax9kcpr46";
     outputFiles = [ "lib/*" ];
     }
